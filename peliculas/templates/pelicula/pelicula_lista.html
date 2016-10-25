@@ -1,0 +1,15 @@
+{% extends 'pelicula/base.html' %}
+
+   {% block content %}
+       {% for peli in peliculas %}
+           <div class="post">
+               <div class="date">
+                   {{ peli.anio }}
+               </div>
+               <h1><a href="">{{ peli.nombre }}</a></h1>
+               {% for actor in peli.actores.all %}
+                  <p>{{ actor.nombre|linebreaksbr }}</p>
+              {% endfor %}
+           </div>
+       {% endfor %}
+   {% endblock content %}
